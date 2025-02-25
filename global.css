@@ -18,6 +18,26 @@ html, body {
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically */
   }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items to the top */
+  width: 100%;
+  padding: 10px 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column; /* Stack label elements vertically */
+  align-items: flex-start; /* Aligns to the left inside the label */
+  gap: 1px; /* Adds spacing between label elements */
+}
+
      
 #map {
     width: 100%;    /* Adjust width to your desired size */
@@ -32,4 +52,8 @@ html, body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+}
+
+#map circle {
+    pointer-events: auto;
 }
