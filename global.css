@@ -56,4 +56,38 @@ label {
 
 #map circle {
     pointer-events: auto;
+
+}
+
+#map circle,
+.legend > div {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
+}
+
+/* Style the legend container */
+.legend {
+  display: flex; /* Align items horizontally */
+  justify-content: space-between; /* Even spacing */
+  gap: 1px; /* Prevent colors from touching */
+  margin-block: 1px; /* Adds space from the map */
+}
+
+/* Style each legend item */
+.legend > div {
+  display: flex;
+  flex: 1; /* Equal width */
+  justify-content: center; /* Center text */
+  padding: 8px 150px; /* More horizontal padding */
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white; /* Ensure contrast */
+  background-color: var(--color);
 }
